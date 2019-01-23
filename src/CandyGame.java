@@ -4,6 +4,7 @@ import java.awt.event.*;
 import java.util.Random;
 
 public class CandyGame implements ActionListener {
+    // LegalPosition legal = new LegalPosition();
 
     private int coord1[];
     private int coord2[];
@@ -68,7 +69,7 @@ public class CandyGame implements ActionListener {
         pt.setText("" + points);
     }
 
-    public void eliminateRow(int x, int y,int num, int mode ) {
+    public void eliminater(int x, int y, int num, int mode ) {
         ImageIcon blank = new ImageIcon("icons/0.gif");
 
         points += ((num + 1) * 10);
@@ -103,9 +104,9 @@ public class CandyGame implements ActionListener {
     public  void changeImage(int x1,int y1,int x2, int y2) {
         int pic1,pic2;
 
-            if (isLegal(x1, y1, x2, y2)) {
-                pic1 = pType(candies[x1][y1].getActionCommand());
-            pic2 = pType(candies[x2][y2].getActionCommand());
+            if (LegalPosition.isLegal(x1, y1, x2, y2)) {
+                pic1 = LegalPosition.pType(candies[x1][y1].getActionCommand());
+                pic2 = LegalPosition.pType(candies[x2][y2].getActionCommand());
 
             candies[x1][y1].setActionCommand("("+ x1 + "," + y1 + "," + pic2 +")");
             candies[x2][y2].setActionCommand("("+ x2 + "," + y2 + "," + pic1 +")");
@@ -114,28 +115,6 @@ public class CandyGame implements ActionListener {
             candies[x1][y1].setIcon(candies[x2][y2].getIcon());
             candies[x2][y2].setIcon(temp);
         }
-    }
-
-    public static int[] getXY(String candy) {
-        int xy[] = new int[2];
-
-        xy[0]= Integer.parseInt(candy.substring(1,2));
-        xy[1]= Integer.parseInt(candy.substring(3,4));
-        return xy;
-    }
-
-    public static boolean isLegal(int x1,int y1,int x2, int y2) {
-        //Check Position
-        // Left + Right
-        if ((x1 == x2 && y1 + 1 == y2) || (x1 == x2 && y1 - 1 == y2))
-            return true;
-            //Down + Up
-        else if ((x1 - 1 == x2 && y1 == y2) || (x1 + 1 == x2 && y1 == y2))
-            return true;
-        //Else move = illegal
-
-        //Check for Matches
-        return false;
     }
 
     public boolean isItGameOver() {
@@ -151,17 +130,13 @@ public class CandyGame implements ActionListener {
     }
 
     public boolean youWin(){
-        if (points >= 600){
-            return true;
-        } else {
-            return false;
-        }
+        return points >= 600;
     }
 
     public boolean checkMove(int x, int y) {
 
-        boolean moveXh=false;
-        boolean moveXv=false;
+        boolean moveXh = false;
+        boolean moveXv = false;
 
         //move up
         if (x != 0) {
@@ -207,11 +182,8 @@ public class CandyGame implements ActionListener {
             //Switch back
             changeImage(x, y, x,y+1);
         }
-
-        if (moveXh == true || moveXv == true)
-            return true;
-
-        return false;
+        //isItGameOver turn to false;
+        return moveXh || moveXv;
     }
 
 	/*Test isItGameOver function
@@ -237,21 +209,12 @@ public class CandyGame implements ActionListener {
 		}
 	}*/
 
-    public boolean samePiece(int x1,int y1,int x2, int y2) {
+    public boolean samePiece(int x1, int y1, int x2, int y2) {
         if (x2 > 7 || y2 > 7 ){
             return false;
     }
 
-        if (pType(candies[x1][y1].getActionCommand()) == pType(candies[x2][y2].getActionCommand())) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-
-    public int pType(String tag) {
-        int num = Integer.parseInt(tag.substring(5,6));
-        return num;
+        return LegalPosition.pType(candies[x1][y1].getActionCommand()) == LegalPosition.pType(candies[x2][y2].getActionCommand());
     }
 
     public boolean compVertical(int mode) {
@@ -265,7 +228,7 @@ public class CandyGame implements ActionListener {
                 } else {
                     if (counter > 1) {
                         if (mode == 0)
-                            eliminateRow(i, j, counter,2);
+                            eliminater(i, j, counter,0);
 
                         change = true;
                     }
@@ -287,7 +250,7 @@ public class CandyGame implements ActionListener {
                 } else {
                     if (counter > 1) {
                         if (mode == 0) {
-                            eliminateRow(i, j, counter, 1);
+                            eliminater(i, j, counter, 1);
                         }
                         change=true;
                     }
@@ -301,12 +264,13 @@ public class CandyGame implements ActionListener {
     //Fill Holes with Random Pieces
     public void fillHoles() {
         int change = 0;
+
         do {
             change = 0;
 
             for (int i = 0; i < 8; i++) {
                 for (int j = 0; j < 8; j++) {
-                    if (pType(candies[i][j].getActionCommand())==0) {
+                    if (LegalPosition.pType(candies[i][j].getActionCommand()) == 0) {
                         change++;
                         if (i == 0) {
                             setPic(i, j, 0);
@@ -316,7 +280,6 @@ public class CandyGame implements ActionListener {
                     }
                 }
             }
-
         } while (change!= 0);
 
     }
@@ -337,10 +300,10 @@ public class CandyGame implements ActionListener {
 
     public void actionPerformed(ActionEvent e) {
         if (turn == 0) {
-            coord1 = getXY(e.getActionCommand());
-            turn++;
+            coord1 = LegalPosition.getXY(e.getActionCommand());
+           turn++;
         } else {
-            coord2 = getXY(e.getActionCommand());
+            coord2 = LegalPosition.getXY(e.getActionCommand());
             changeImage(coord1[0],coord1[1],coord2[0],coord2[1]);
 
             boolean changeVertical = false;

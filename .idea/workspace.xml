@@ -2,10 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="78aeedba-ee67-438c-9e72-e7683e39912d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/flow/com/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CandyCrush/CandyGame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CandyCrush/CandyGame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CandyCrush.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CandyCrush.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CandyGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CandyGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CandyCrush/CandyCrush.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CandyCrush/CandyGame.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CandyCrush/LegalPosition.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CandyCrush.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CandyGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/flow/com/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LegalPosition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/flow/com/LegalPosition.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -18,60 +22,42 @@
     <session id="-1161459884">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="25" />
-          <entry key="project.open.time.0" value="10" />
-          <entry key="project.open.time.1" value="2" />
-          <entry key="project.open.time.4" value="2" />
-          <entry key="project.open.time.5" value="9" />
+          <entry key="project.closed" value="34" />
+          <entry key="project.open.time.0" value="14" />
+          <entry key="project.open.time.1" value="5" />
+          <entry key="project.open.time.4" value="3" />
+          <entry key="project.open.time.5" value="10" />
           <entry key="project.open.time.6" value="2" />
           <entry key="project.open.time.8" value="1" />
-          <entry key="project.opened" value="26" />
+          <entry key="project.opened" value="35" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CLASS" value="1" />
-          <entry key="JAVA" value="45" />
+          <entry key="JAVA" value="55" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="2371" />
-          <entry key="PLAIN_TEXT" value="9" />
+          <entry key="JAVA" value="3019" />
+          <entry key="PLAIN_TEXT" value="41" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/CandyCrush.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="100">
-              <caret line="5" column="1" lean-forward="true" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
+    <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/CandyGame.java">
+        <entry file="file://$PROJECT_DIR$/src/flow/com/Game.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="108" column="17" selection-start-line="108" selection-start-column="16" selection-end-line="108" selection-end-column="17" />
+            <state relative-caret-position="372">
+              <caret line="90" column="32" lean-forward="true" selection-start-line="90" selection-start-column="32" selection-end-line="90" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#4456#4457#0" expanded="true" />
-                <element signature="e#4492#4493#0" expanded="true" />
+                <element signature="e#3941#3942#0" expanded="true" />
+                <element signature="e#3977#3978#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/LegalPosition.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="400">
-              <caret line="20" column="21" lean-forward="true" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -87,11 +73,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>sam</find>
-      <find>eliminaterow</find>
-      <find>coord2</find>
-      <find>listener</find>
-      <find>ActionCommand</find>
       <find>point</find>
       <find>fill</find>
       <find>getPic</find>
@@ -109,7 +90,6 @@
       <find>pty</find>
       <find>getXY</find>
       <find>coord1</find>
-      <find>turn</find>
       <find>setI</find>
       <find>setPi</find>
       <find>pType</find>
@@ -117,6 +97,12 @@
       <find>getX</find>
       <find>isLeg</find>
       <find>pTy</find>
+      <find>changeI</find>
+      <find>ROW</find>
+      <find>getPIc</find>
+      <find>turn</find>
+      <find>isIT</find>
+      <find>chec</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -130,7 +116,6 @@
         <option value="$PROJECT_DIR$/src/hardToCandy.java" />
         <option value="$PROJECT_DIR$/src/Board.java" />
         <option value="$PROJECT_DIR$/src/Candies.java" />
-        <option value="$PROJECT_DIR$/src/Game.java" />
         <option value="$PROJECT_DIR$/src/StepClick.java" />
         <option value="$PROJECT_DIR$/src/Match3.java" />
         <option value="$PROJECT_DIR$/src/OldBejeweled.java" />
@@ -138,17 +123,32 @@
         <option value="$PROJECT_DIR$/src/Elimination.java" />
         <option value="$PROJECT_DIR$/src/FillTable.java" />
         <option value="$PROJECT_DIR$/src/CompHoriAndVert.java" />
-        <option value="$PROJECT_DIR$/src/CandyCrush.java" />
         <option value="$PROJECT_DIR$/src/LegalPosition.java" />
         <option value="$PROJECT_DIR$/src/CandyGame.java" />
+        <option value="$PROJECT_DIR$/src/CandyCrush.java" />
+        <option value="$PROJECT_DIR$/src/GUI.java" />
+        <option value="$PROJECT_DIR$/src/Ending.java" />
+        <option value="$PROJECT_DIR$/src/Game.java" />
+        <option value="$PROJECT_DIR$/src/Main.java" />
+        <option value="$PROJECT_DIR$/src/flow/com/Board.java" />
+        <option value="$PROJECT_DIR$/src/flow/com/GUI.java" />
+        <option value="$PROJECT_DIR$/src/flow/com/Main.java" />
+        <option value="$PROJECT_DIR$/src/flow/com/LegalPosition.java" />
+        <option value="$PROJECT_DIR$/src/flow/com/Game.java" />
       </list>
     </option>
   </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand />
+      <select />
+    </treeState>
+  </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-10" />
-    <option name="y" value="-10" />
-    <option name="width" value="1940" />
-    <option name="height" value="1050" />
+    <option name="x" value="10" />
+    <option name="y" value="20" />
+    <option name="width" value="1350" />
+    <option name="height" value="690" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -156,7 +156,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -170,15 +169,23 @@
               <item name="CandyCrush" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="CandyCrush" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CandyCrush" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548249175550" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../aknakereso1128" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548336307350" />
+    <property name="full.screen.before.presentation.mode" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="configurable.group.language" />
   </component>
   <component name="RunDashboard">
@@ -193,23 +200,23 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.CandyCrush">
-    <configuration name="CandyCrush" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="CandyCrush" />
-      <module name="CandyCrush" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CandyGame" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="CandyGame" />
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Game" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="flow.com.Game" />
       <module name="CandyCrush" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <configuration name="Game" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Game" />
+      <option name="MAIN_CLASS_NAME" value="flow.com.Game" />
+      <module name="CandyCrush" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="flow.com.Main" />
       <module name="CandyCrush" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -223,15 +230,13 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.CandyGame" />
       <item itemvalue="Application.Game" />
       <item itemvalue="Application.Match3" />
-      <item itemvalue="Application.CandyCrush" />
+      <item itemvalue="Application.Main" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.CandyCrush" />
-        <item itemvalue="Application.CandyGame" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="Application.Match3" />
         <item itemvalue="Application.Game" />
       </list>
@@ -251,38 +256,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="0" y="0" width="1536" height="864" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.12818792" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Image Layers" order="2" />
-      <window_info id="Designer" order="3" />
-      <window_info id="UI Designer" order="4" />
-      <window_info id="Capture Tool" order="5" />
-      <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49932885" visible="true" weight="0.23937677" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39943343" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.50067115" side_tool="true" weight="0.23937677" />
-      <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.3286119" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="right" id="Theme Preview" order="5" />
-      <window_info anchor="right" id="Palette&#9;" order="6" />
-      <window_info anchor="right" id="Maven Projects" order="7" />
-    </layout>
-    <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12818792" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.14295302" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -307,7 +284,35 @@
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="right" id="Theme Preview" order="5" />
       <window_info anchor="right" id="Palette&#9;" order="6" />
-      <window_info anchor="right" id="Maven Projects" order="7" />
+      <window_info anchor="right" id="Maven Projects" order="7" weight="0.3295302" />
+    </layout>
+    <layout-to-restore>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14295302" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49932885" weight="0.23937677" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39943343" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.50067115" side_tool="true" weight="0.23937677" />
+      <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.3286119" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Palette&#9;" order="6" />
+      <window_info anchor="right" id="Maven Projects" order="7" weight="0.3295302" />
     </layout-to-restore>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -316,13 +321,6 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/flow/academey/Panel.java" />
     <entry file="file://$PROJECT_DIR$/src/flow/academey/OldBejeweled.java" />
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_191/src.zip!/java/util/Random.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="148">
-          <caret line="103" column="11" selection-start-line="103" selection-start-column="11" selection-end-line="103" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_191/src.zip!/java/awt/GridLayout.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="106">
@@ -345,7 +343,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Game.java" />
     <entry file="file://$PROJECT_DIR$/src/StepClick.java" />
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_191/src.zip!/java/lang/System.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -356,7 +353,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Match3.java" />
     <entry file="file://$PROJECT_DIR$/src/Candies.java" />
-    <entry file="file://$PROJECT_DIR$/src/Board.java" />
     <entry file="file://$PROJECT_DIR$/out/production/CandyCrush/Board.class" />
     <entry file="file://$PROJECT_DIR$/src/Elimination.java" />
     <entry file="file://$PROJECT_DIR$/src/FillTable.java" />
@@ -387,10 +383,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="169">
           <caret line="98" column="11" selection-start-line="98" selection-start-column="11" selection-end-line="98" selection-end-column="11" />
-          <folding>
-            <element signature="e#2584#2585#0" expanded="true" />
-            <element signature="e#2616#2617#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -398,39 +390,41 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="157">
           <caret line="453" column="16" selection-start-line="453" selection-start-column="16" selection-end-line="453" selection-end-column="16" />
-          <folding>
-            <element signature="e#14880#14881#0" expanded="true" />
-            <element signature="e#14914#14915#0" expanded="true" />
-            <element signature="e#36388#36389#0" expanded="true" />
-            <element signature="e#36446#36447#0" expanded="true" />
-            <element signature="e#68197#68198#0" expanded="true" />
-            <element signature="e#68254#68255#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/CandyCrush.java">
+    <entry file="file://$PROJECT_DIR$/src/Ending.java" />
+    <entry file="file://$PROJECT_DIR$/src/flow/com/Board.java" />
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_191/src.zip!/java/util/Random.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="5" column="1" lean-forward="true" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
+        <state relative-caret-position="188">
+          <caret line="387" column="42" lean-forward="true" selection-start-line="387" selection-start-column="42" selection-end-line="387" selection-end-column="42" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/LegalPosition.java">
+    <entry file="file://$PROJECT_DIR$/src/flow/com/GUI.java" />
+    <entry file="file://$PROJECT_DIR$/src/flow/com/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="20" column="21" lean-forward="true" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
+        <state relative-caret-position="231">
+          <caret line="7" column="35" selection-start-line="7" selection-start-column="35" selection-end-line="7" selection-end-column="35" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/CandyGame.java">
+    <entry file="file://$PROJECT_DIR$/src/flow/com/LegalPosition.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="108" column="17" selection-start-line="108" selection-start-column="16" selection-end-line="108" selection-end-column="17" />
+        <state relative-caret-position="924">
+          <caret line="28" column="5" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/flow/com/Game.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="372">
+          <caret line="90" column="32" lean-forward="true" selection-start-line="90" selection-start-column="32" selection-end-line="90" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#4456#4457#0" expanded="true" />
-            <element signature="e#4492#4493#0" expanded="true" />
+            <element signature="e#3941#3942#0" expanded="true" />
+            <element signature="e#3977#3978#0" expanded="true" />
           </folding>
         </state>
       </provider>

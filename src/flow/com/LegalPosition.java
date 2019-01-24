@@ -1,3 +1,5 @@
+package flow.com;
+
 public class LegalPosition {
 
     public static int[] getXY(String candy) {
@@ -25,5 +27,4 @@ public class LegalPosition {
         int num = Integer.parseInt(tag.substring(5,6));
         return num;
     }
-
 }

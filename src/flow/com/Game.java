@@ -1,17 +1,18 @@
+package flow.com;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.util.Random;
 
-public class CandyGame implements ActionListener {
-    // LegalPosition legal = new LegalPosition();
+public class Game implements ActionListener {
 
     private int coord1[];
     private int coord2[];
 
     private int turn = 0;
+    private int pic = 0;
     private int points;
-    int pic = 0;
 
     JLabel pt = new JLabel("" + points);
     JLabel lbpts = new JLabel("Points:");
@@ -19,10 +20,10 @@ public class CandyGame implements ActionListener {
     private final int ROW = 8;
     private final int COL = 8;
 
-    private JButton candies[][] = new JButton[ROW][COL];
+    public JButton candies[][] = new JButton[ROW][COL];
 
     //Set up window
-    public CandyGame() {
+    public Game() {
 
         JFrame frame = new JFrame("Candy Crush Clone");
         frame.setLayout(new GridLayout(9,COL));
@@ -32,7 +33,7 @@ public class CandyGame implements ActionListener {
         //Create Buttons
         for (int i = 0; i < ROW; i++) {
             for (int j = 0; j < COL; j++) {
-                pic = getPic(i,j);
+                pic = getPic(i, j);
                 candies[i][j].setActionCommand("("+ i + "," + j + "," + pic +")");
                 candies[i][j].addActionListener(this);
                 frame.getContentPane().add(candies[i][j]);
@@ -69,28 +70,36 @@ public class CandyGame implements ActionListener {
         pt.setText("" + points);
     }
 
+    private void horizontalEliminater (int x, int y, int num, ImageIcon blank) {
+        for (int i = y; num >= 0; i--, num--) {
+            candies[x][i].setActionCommand("(" + x + "," + i + "," + 0 + ")");
+            candies[x][i].setIcon(blank);
+        }
+    }
+
+    private void verticalEliminater (int x, int y, int num, ImageIcon blank) {
+        for (int i = x; num >= 0; i--, num--) {
+            candies[i][y].setActionCommand("(" + i + "," + y + "," + 0 + ")");
+            candies[i][y].setIcon(blank);
+        }
+    }
+
     public void eliminater(int x, int y, int num, int mode ) {
         ImageIcon blank = new ImageIcon("icons/0.gif");
 
         points += ((num + 1) * 10);
-        pt.setText("" + points);
+        pt.setText(String.valueOf(points));
 
-        if (mode == 1) {
-            //Delete Horizontal Row
-            for (int i = y; num >= 0; i--, num--) {
-                candies[x][i].setActionCommand("("+ x + "," + i + "," + 0 +")");
-                candies[x][i].setIcon(blank);
-            }
+        boolean isHorizontal = mode == 1;
+
+        if (isHorizontal) {
+           horizontalEliminater(x, y, num, blank);
         } else {
-            //Delete Vertical Row
-            for (int i = x; num >= 0; i--, num--) {
-                candies[i][y].setActionCommand("("+ i + "," + y + "," + 0 +")");
-                candies[i][y].setIcon(blank);
-            }
+            verticalEliminater(x, y, num, blank);
         }
     }
 
-    public  int getPic(int x, int y) {
+    public int getPic(int x, int y) {
         Random generator = new Random();
         int i =0;
 
@@ -101,7 +110,7 @@ public class CandyGame implements ActionListener {
         return i;
     }
 
-    public  void changeImage(int x1,int y1,int x2, int y2) {
+    public void changeImage(int x1,int y1,int x2, int y2) {
         int pic1,pic2;
 
             if (LegalPosition.isLegal(x1, y1, x2, y2)) {
@@ -129,7 +138,7 @@ public class CandyGame implements ActionListener {
         return true;
     }
 
-    public boolean youWin(){
+    public boolean youWin() {
         return points >= 600;
     }
 
@@ -212,8 +221,7 @@ public class CandyGame implements ActionListener {
     public boolean samePiece(int x1, int y1, int x2, int y2) {
         if (x2 > 7 || y2 > 7 ){
             return false;
-    }
-
+        }
         return LegalPosition.pType(candies[x1][y1].getActionCommand()) == LegalPosition.pType(candies[x2][y2].getActionCommand());
     }
 
@@ -227,9 +235,9 @@ public class CandyGame implements ActionListener {
                     counter++;
                 } else {
                     if (counter > 1) {
-                        if (mode == 0)
-                            eliminater(i, j, counter,0);
-
+                        if (mode == 0) {
+                            eliminater(i, j, counter, 0);
+                        }
                         change = true;
                     }
                     counter = 0;
@@ -327,9 +335,9 @@ public class CandyGame implements ActionListener {
                 counter++;
             } while (changeVertical || changeHorizontal);
 
-            //endGame();Test isItGameOver function
+            //endGame(); Test isItGameOver function
 
-            //Check for moves. if moves = 0 Game Over
+            //Check for moves. if moves = 0 flow.com.Game Over
             if (isItGameOver()) {
                 JOptionPane.showMessageDialog(null, "You Lose!!!", "Failed", JOptionPane.INFORMATION_MESSAGE);
             }

@@ -1,5 +1,9 @@
 package flow.com;
 
+import music.Music;
+import music.Music2;
+import music.Win;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -62,15 +66,15 @@ public class Game implements ActionListener {
 
         //Display Window
         frame.pack();
-        frame.setSize(480,500);
+        frame.setSize(800,820);
         frame.setVisible(true);
         frame.setLocationRelativeTo(null);
 
         points = 0;
-        pt.setText("" + points);
+        pt.setText(String.valueOf(points));
     }
 
-    private void horizontalEliminater (int x, int y, int num, ImageIcon blank) {
+  /*  private void horizontalEliminater (int x, int y, int num, ImageIcon blank) {
         for (int i = y; num >= 0; i--, num--) {
             candies[x][i].setActionCommand("(" + x + "," + i + "," + 0 + ")");
             candies[x][i].setIcon(blank);
@@ -82,20 +86,26 @@ public class Game implements ActionListener {
             candies[i][y].setActionCommand("(" + i + "," + y + "," + 0 + ")");
             candies[i][y].setIcon(blank);
         }
-    }
+    }*/
 
     public void eliminater(int x, int y, int num, int mode ) {
         ImageIcon blank = new ImageIcon("icons/0.gif");
 
         points += ((num + 1) * 10);
-        pt.setText(String.valueOf(points));
+        pt.setText("" + points);
 
-        boolean isHorizontal = mode == 1;
-
-        if (isHorizontal) {
-           horizontalEliminater(x, y, num, blank);
+        if (mode == 1) {
+            //Delete Horizontal Row
+            for (int i = y; num >= 0; i--, num--) {
+                candies[x][i].setActionCommand("("+ x + "," + i + "," + 0 +")");
+                candies[x][i].setIcon(blank);
+            }
         } else {
-            verticalEliminater(x, y, num, blank);
+            //Delete Vertical Row
+            for (int i = x; num >= 0; i--, num--) {
+                candies[i][y].setActionCommand("("+ i + "," + y + "," + 0 +")");
+                candies[i][y].setIcon(blank);
+            }
         }
     }
 
@@ -117,12 +127,13 @@ public class Game implements ActionListener {
                 pic1 = LegalPosition.pType(candies[x1][y1].getActionCommand());
                 pic2 = LegalPosition.pType(candies[x2][y2].getActionCommand());
 
-            candies[x1][y1].setActionCommand("("+ x1 + "," + y1 + "," + pic2 +")");
-            candies[x2][y2].setActionCommand("("+ x2 + "," + y2 + "," + pic1 +")");
+                candies[x1][y1].setActionCommand("("+ x1 + "," + y1 + "," + pic2 +")");
+                candies[x2][y2].setActionCommand("("+ x2 + "," + y2 + "," + pic1 +")");
 
-            Icon temp = candies[x1][y1].getIcon() ;
-            candies[x1][y1].setIcon(candies[x2][y2].getIcon());
-            candies[x2][y2].setIcon(temp);
+                Icon temp = candies[x1][y1].getIcon() ;
+                candies[x1][y1].setIcon(candies[x2][y2].getIcon());
+                candies[x2][y2].setIcon(temp);
+
         }
     }
 
@@ -130,7 +141,6 @@ public class Game implements ActionListener {
         for (int i = 0; i < 8; i++) {
             for (int j = 0; j < 8; j++) {
                 if (checkMove(i,j)) {
-                    //System.out.println("Check:("+i+","+j+")");
                     return false;
                 }
             }
@@ -139,7 +149,7 @@ public class Game implements ActionListener {
     }
 
     public boolean youWin() {
-        return points >= 600;
+        return points >= 300;
     }
 
     public boolean checkMove(int x, int y) {
@@ -163,7 +173,6 @@ public class Game implements ActionListener {
             changeImage(x, y,x+1, y);
             moveXh = compHorizontal(1);
             moveXv = compVertical(1);
-
             //Switch back
             changeImage(x, y,x+1, y);
         }
@@ -307,6 +316,11 @@ public class Game implements ActionListener {
     }
 
     public void actionPerformed(ActionEvent e) {
+        Music zene = new Music();
+        Music2 zene2 = new Music2();
+        Win winMusic = new Win();
+
+
         if (turn == 0) {
             coord1 = LegalPosition.getXY(e.getActionCommand());
            turn++;
@@ -325,8 +339,11 @@ public class Game implements ActionListener {
 
                 if (changeVertical || changeHorizontal) {
                     fillHoles();
+                    zene.music();
                 } else { //Move made no matches
+
                     if (counter == 0) {
+                        zene2.music();
                         JOptionPane.showMessageDialog(null,"Bad Move.", "Wrong Step Alert!", JOptionPane.INFORMATION_MESSAGE);
                         //Switch back Pictures, if move is bad
                         changeImage(coord1[0], coord1[1], coord2[0], coord2[1]);
@@ -343,6 +360,7 @@ public class Game implements ActionListener {
             }
 
             if (youWin()){
+                winMusic.music();
                 JOptionPane.showMessageDialog(null, "You win", "Cheer!", JOptionPane.INFORMATION_MESSAGE);
             }
             turn = 0; // reset clickMethod

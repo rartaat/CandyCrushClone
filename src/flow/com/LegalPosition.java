@@ -1,5 +1,15 @@
 package flow.com;
 
+import sun.audio.AudioData;
+import sun.audio.AudioPlayer;
+import sun.audio.AudioStream;
+import sun.audio.ContinuousAudioDataStream;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
+
 public class LegalPosition {
 
     public static int[] getXY(String candy) {
@@ -16,15 +26,14 @@ public class LegalPosition {
         if ((x1 == x2 && y1 + 1 == y2) || (x1 == x2 && y1 - 1 == y2))
             return true;
             //Down + Up
-        else if ((x1 - 1 == x2 && y1 == y2) || (x1 + 1 == x2 && y1 == y2))
-            return true;
+        else return (x1 - 1 == x2 && y1 == y2) || (x1 + 1 == x2 && y1 == y2);
         //Else move = illegal
         //Check for Matches
-        return false;
     }
 
     public static int pType(String tag) {
-        int num = Integer.parseInt(tag.substring(5,6));
-        return num;
+        return Integer.parseInt(tag.substring(5,6));
     }
+
+
 }
